@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css">
+    <link rel="stylesheet" href="/client/index.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body class="logged-in">
+    <div class="topnav">
+        <a href="#home" class="logo" onclick="window.location.href='profile.html'">IWEI</a>
+        <div class="topnav-right">
+            <a href="#settings" id="settings" onclick="window.location.href='home.html?uname=&psw=&remember=on'">Logout</a>
+        </div>  
+    </div>
+    <div id="profile">
+        <div class= 'vl'></div>
+        <section id="section">
+            <script> 
+                axios.get('http://localhost:5432/users/login').then(res => {
+                    let [{fname,username,regemail}] = res.data[0]
+                    const printDiv= (res) => {
+                        return document.getElementById('section').innerHTML = `Welcome ${fname}`
+                    }
+                    printDiv()
+                })
+            </script>
+        </section>
+        <div id="info1" class = 'info'>
+            
+        </div> 
+        </div>
+    </div>
+
+    <section class="box" id="first-I"><p class="block" id="first_i">I</p></section>
+    <section class="box" id="WE"><p class="block" id="we">WE</p></section>
+    <section class="box" id="last-I"><p class="block" id="last_i">I</p></section> 
+
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
