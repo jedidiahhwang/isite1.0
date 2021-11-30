@@ -6,13 +6,13 @@ const app = express();
 const path = require('path')
 
 const {SERVER_PORT} = process.env
-const PORT = process.env.PORT || 5432
+const port = process.env.PORT || 5432
 
 app.use(cors());
 app.use(express.json());
 
 app.get('/', (req,res)=> {
-    res.sendFile(path.join(__dirname,"../client/index.html"))
+    res.sendFile(path.join(__dirname,"../client/home.html"))
 })
 app.use('/css', express.static(path.join(__dirname, "../client/index.css")))
 app.get('/js', (req,res)=> {
@@ -32,4 +32,4 @@ app.delete(`/users/:user_id`, deleteUser);
 app.get('/users/login', getUser)
 
 
-app.listen(PORT, ()=> console.log(`Up on ${PORT}`));
+app.listen(port, ()=> console.log(`Up on ${port}`));
