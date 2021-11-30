@@ -1,10 +1,10 @@
-require("dotenv").config()
-const {CONNECTION_STRING} = process.env;
+// require("dotenv").config()
+// const {CONNECTION_STRING} = process.env;
 
 const Sequelize = require("sequelize")
 const bcrypt = require('bcrypt')
 
-const sequelize = new Sequelize(CONNECTION_STRING,{
+const sequelize = new Sequelize("postgres://emebhbxaawsecg:aaada0ba74611ddbac9bcbe81885167e534d5de573f10ee41e61260c3fe22d27@ec2-34-236-34-103.compute-1.amazonaws.com:5432/d19gn43gh2es1d",{
 	dialect:"postgres",
 	dialectOptions: {
 		ssl: {

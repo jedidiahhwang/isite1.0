@@ -23,10 +23,10 @@ const signInBtn = document.getElementById('submit')
 const forgotPsw = document.getElementById('forgot')
 const rememberBtn = document.getElementById('remember')
 //register new user
-const getAllUsers = () => axios.get(`/users`).then(res => console.log(res.data))
-const regUser = (body) => axios.post(`/users/register`, body).then(res => regCB(res.data))
-const deleteUser = user_id => axios.delete(`/users/:${user_id}`).then(res=> console.log(res.data))
-const loginUser= (body) =>axios.post(`/users/login`,body).then(res=> userCB(res.data))
+const getAllUsers = () => axios.get(`${baseURL}/users`).then(res => console.log(res.data))
+const regUser = (body) => axios.post(`${baseURL}/users/register`, body).then(res => regCB(res.data))
+const deleteUser = user_id => axios.delete(`${baseURL}/users/:${user_id}`).then(res=> console.log(res.data))
+const loginUser= (body) =>axios.post(`${baseURL}/users/login`,body).then(res=> userCB(res.data))
  
 //add event listeners
 regBtn.onclick = function(){
