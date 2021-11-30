@@ -1,5 +1,5 @@
 
-const baseURL = 'https://iwei.herokuapp.com/'
+const baseURL = 'https://iwei.herokuapp.com'
 
 //grab INPUT elements first and store them in variables
 const regContainer = document.getElementById('register');
@@ -23,7 +23,7 @@ const signInBtn = document.getElementById('submit')
 const forgotPsw = document.getElementById('forgot')
 const rememberBtn = document.getElementById('remember')
 //register new user
-const getAllUsers = () => axios.get(`/users`).then(res => console.log(res.data))
+const getAllUsers = () => axios.get(`/users`).then(res => console.log(res.data)).catch(err=> console.log(err))
 const regUser = (body) => axios.post(`/users/register`, body).then(res => regCB(res.data))
 const deleteUser = user_id => axios.delete(`/users/:${user_id}`).then(res=> console.log(res.data))
 const loginUser= (body) =>axios.post(`/users/login`,body).then(res=> userCB(res.data))
