@@ -20,7 +20,7 @@
         <div class= 'vl'></div>
         <section id="section">
             <script> 
-                axios.get('/users/login').then(res => {
+                axios.get('/users/profile').then(res => {
                     let [{fname,username,regemail}] = res.data[0]
                     const printDiv= (res) => {
                         return document.getElementById('section').innerHTML = `Welcome ${fname}`
