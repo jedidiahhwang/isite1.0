@@ -1,6 +1,6 @@
 // require("dotenv").config()
 // const {CONNECTION_STRING} = process.env;
-const db = process.env.DATABASE_URL
+const db = process.env.DATABASE_URL 
 const Sequelize = require("sequelize")
 const bcrypt = require('bcrypt')
 
