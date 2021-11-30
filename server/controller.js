@@ -4,7 +4,7 @@ const db = process.env.DATABASE_URL
 const Sequelize = require("sequelize")
 const bcrypt = require('bcrypt')
 
-const sequelize = new Sequelize(db,{
+const sequelize = new Sequelize(db, {
 	dialect:"postgres",
 	dialectOptions: {
 		ssl: {

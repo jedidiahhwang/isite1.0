@@ -1,5 +1,5 @@
 
-const baseURL = 'https://blake-project.herokuapp.com/'
+const baseURL = 'https://blake-project.herokuapp.com'
 
 //grab INPUT elements first and store them in variables
 const regContainer = document.getElementById('register');
