@@ -12,14 +12,14 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req,res)=> {
-    res.sendFile(path.join(__dirname,'../client/index.html'))
+    res.sendFile(path.join(__dirname,"../client/index.html"))
 })
-app.use('/css', express.static(path.join(__dirname, "/client/index.css")))
+app.use('/css', express.static(path.join(__dirname, "../client/index.css")))
 app.get('/js', (req,res)=> {
-    res.sendFile(path.join(__dirname, '../client/main.js'))
+    res.sendFile(path.join(__dirname, "../client/main.js"))
 })
-app.get('/', (req,res)=> {
-    res.sendFile(path.join(__dirname,'../client/profile.html'))
+app.get('/profile', (req,res)=> {
+    res.sendFile(path.join(__dirname,"../client/profile.html"))
 })
 
 const {createTables,getAllUsers,loginUser,deleteUser,registerUser,getUser} = require("./controller.js")
