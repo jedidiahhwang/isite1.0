@@ -112,3 +112,5 @@ function validateEmail(inputText){
         return swal("You have entered an invalid email address");
     }
 }
+
+getAllUsers();
